@@ -21,11 +21,11 @@ transporter.verify((error, success) => {
   }
 });
 router.post('/send', (req, res, next) => {
-  var name = req.body.first_name + req.body.last_name
+  var name = req.body.first_name + " " + req.body.last_name
   var email = req.body.email
   var phone = req.body.phone
   var message = req.body.message
-  var content = `<h1>name: ${name}</h1> \n email: ${email} \n message: ${message} `
+  var content = `<h1>name: ${name}</h1> \n email: ${email} \n phone: ${phone} \n message: ${message} `
   var mail = {
     from: name,
     to: 'thawshi.s@arceus.tech',  // Change to email address that you want to receive messages on
