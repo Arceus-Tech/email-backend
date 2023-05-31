@@ -29,7 +29,7 @@ router.post('/send', (req, res, next) => {
   var mail = {
     from: name,
     to: 'thawshi.s@arceus.tech',  // Change to email address that you want to receive messages on
-    subject: 'New Message from Contact Form',
+    subject: `New Message from ${email}`,
     text: content,
     html : `
     <html>
@@ -40,9 +40,11 @@ router.post('/send', (req, res, next) => {
 <body>
 
 <p style="font-size: 36px; font-weight: 700; line-height: 100%;  color: black;">Secure capital trades</p>
-<p style="width: 100%; font-size: 27px; font-weight: 700; line-height: 34px; color: rgba(28, 30, 35, 1);">Received new message from <span style="color: #2563eb;"> Name </span></p>
-<p style="width: 100%; font-size: 19px; line-height: 24px;  color: black;">Email address: email <br/> Phone Number : +9477 123 123 1234</p>
-<p style="max-width: 80%; font-size: 20px; line-height: 153.50%; color: black;">Boost your emails with Blush! Create dope emails easy and fast! <br/>Install the Blush plugin to customize all the illustrations!<br/><br/>Create the coolest emails!</p>
+<p style="width: 100%; font-size: 27px; font-weight: 700; line-height: 34px; color: rgba(28, 30, 35, 1);">Received new message from <span style="color: #2563eb;"> ${name}</span></p>
+<p style="width: 100%; font-size: 19px; line-height: 24px;  color: black;">Email address: email <br/> Phone Number : ${phone}</p>
+<p style="max-width: 80%; font-size: 20px; line-height: 153.50%; color: black;">
+${message}
+</p>
 
 </body>
 </html> `
