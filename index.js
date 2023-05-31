@@ -5,8 +5,8 @@ var cors = require('cors');
 
 
 var transport = {
-    host: 'mail.globalcapitalexe.com', // Don’t forget to replace with the SMTP host of your provider
-    port: 465,
+    host: process.env.MAIL_SERVER, // Don’t forget to replace with the SMTP host of your provider
+    port: process.env.MAIL_PORT,
     auth: {
     user: process.env.USER,
     pass: process.env.PASS
