@@ -28,7 +28,7 @@ router.post('/send', (req, res, next) => {
   var content = `<h1>name: ${name}</h1> \n email: ${email} \n phone: ${phone} \n message: ${message} `
   var mail = {
     from: name,
-    to: 'info@arceus.tech',  // Change to email address that you want to receive messages on
+    to: 'info@securecapitaltrades.com',  // Change to email address that you want to receive messages on
     subject: `New Message from ${email}`,
     text: content,
     html : `

@@ -1,4 +1,4 @@
 module.exports = {
-    USER: 'test@globalcapitalexe.com',
-    PASS: 'eGhiXC#rxZfb'
+    USER: 'info@securecapitaltrades.com',
+    PASS: '~y4W3N}PE^m5'
 }
