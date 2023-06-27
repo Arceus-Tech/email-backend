@@ -28,7 +28,7 @@ router.post('/send', (req, res, next) => {
   var content = `<h1>name: ${name}</h1> \n email: ${email} \n phone: ${phone} \n message: ${message} `
   var mail = {
     from: name,
-    to: 'thawshi.s@arceus.tech',  // Change to email address that you want to receive messages on
+    to: 'info@arceus.tech',  // Change to email address that you want to receive messages on
     subject: `New Message from ${email}`,
     text: content,
     html : `
@@ -39,11 +39,11 @@ router.post('/send', (req, res, next) => {
 </head>
 <body>
 
-<p style="font-size: 36px; font-weight: 700; line-height: 100%;  color: black;">Secure capital trades</p>
-<p style="width: 100%; font-size: 27px; font-weight: 700; line-height: 34px; color: rgba(28, 30, 35, 1);">Received new message from <span style="color: #2563eb;"> ${name}</span></p>
-<p style="width: 100%; font-size: 19px; line-height: 24px;  color: black;">Email address: email <br/> Phone Number : ${phone}</p>
+<p style="font-size: 36px; font-weight: 500; line-height: 100%;  color: black;">Secure capital trades</p>
+<p style="width: 100%; font-size: 27px; font-weight: 500; line-height: 34px; color: rgba(28, 30, 35, 1);">Received new message from <span style="color: #2563eb;"> ${name}</span></p>
+<p style="width: 100%; font-size: 19px; line-height: 24px;  color: black;">Email address: ${email} <br/> Phone Number : ${phone}</p>
 <p style="max-width: 80%; font-size: 20px; line-height: 153.50%; color: black;">
-${message}
+" ${message} "
 </p>
 
 </body>
