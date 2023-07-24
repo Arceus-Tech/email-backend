@@ -42,7 +42,7 @@ if (error) {
 });
 
 
-router.post('/capital', (req, res, next) => {
+router.post('/send', (req, res, next) => {
   var name = req.body.first_name + " " + req.body.last_name
   var email = req.body.email
   var phone = req.body.phone
