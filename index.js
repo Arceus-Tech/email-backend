@@ -4,7 +4,11 @@ var nodemailer = require('nodemailer');
 var cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
+const axios = require('axios');
 
+
+
+const PORT =  3002;
 
 
 var transport = {
@@ -215,4 +219,28 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/', router)
-app.listen(3002)
+
+
+app.post("/verify-token", async (req,res) => {
+
+
+  try{
+      let token = req.body.token;
+
+      console.log(token)
+      const APP_SECRET_KEY = process.env.APP_SECRET_KEY_SAP
+
+      let response = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${APP_SECRET_KEY}&response=${token}`);
+      return res.status(200).json({
+          success:true,
+          message: "Token successfully verified",
+          data: response.data
+      });
+  }catch(error){
+      return res.status(500).json({
+          success:false,
+          message: "Error verifying token"
+      })
+  }
+});
+app.listen(PORT,() => console.log(`App started on port ${PORT}`));
