@@ -24,6 +24,7 @@ transporter.verify((error, success) => {
   }
 });
 
+
 var transport_2 = {
   host: process.env.MAIL_SERVER_2, // Don’t forget to replace with the SMTP host of your provider
   port: process.env.MAIL_PORT_2,
@@ -97,8 +98,8 @@ router.post('/sap', (req, res, next) => {
 
   const mail = {
     from: email,
-    to: 'info@securecapitaltrades.com',  // Change to the email address you want to receive messages on
-    subject: `New Message from ${email}`,
+    to: 'info@frankieglobalsolutions.com', 
+    subject: `New Message from ${name} - Web Form`,
     text: content,
     html: `
     <!DOCTYPE html>
